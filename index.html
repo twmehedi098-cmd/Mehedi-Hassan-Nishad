@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>•<Mehedi Hassan Nishad>•</title>
+
+    <!-- Google Font + smooth icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free) for subtle icons, improves professionalism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- SPEED OPTIMIZATION (preserved & enhanced) -->
+    <link rel="dns-prefetch" href="//www.facebook.com">
+    <link rel="dns-prefetch" href="//www.instagram.com">
+    <link rel="dns-prefetch" href="//wa.me">
+    <link rel="dns-prefetch" href="//www.threads.net">
+    <link rel="dns-prefetch" href="//www.snapchat.com">
+    <link rel="dns-prefetch" href="//www.youtube.com">
+    <link rel="dns-prefetch" href="//discord.gg">
+    <link rel="dns-prefetch" href="//t.me">
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin>
+    <link rel="preconnect" href="https://www.instagram.com" crossorigin>
+    <link rel="preconnect" href="https://wa.me" crossorigin>
+    <link rel="preconnect" href="https://www.threads.net" crossorigin>
+    <link rel="preconnect" href="https://www.snapchat.com" crossorigin>
+    <link rel="preconnect" href="https://www.youtube.com" crossorigin>
+    <link rel="preconnect" href="https://discord.gg" crossorigin>
+    <link rel="preconnect" href="https://t.me" crossorigin>
+
+    <style>
+        /* ---------- RESET / GLOBAL ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0b0d1a, #030514);
+            color: #f0f3fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---------- CUSTOM SCROLLBAR ---------- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 20, 10, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00c853;
+            border-radius: 8px;
+            box-shadow: inset 0 0 6px #aaffbb;
+        }
+
+        /* ---------- TYPOGRAPHY ---------- */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* ---------- HEADER / PROFILE ---------- */
+        header {
+            text-align: center;
+            padding: 80px 20px 50px;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(4px);
+            border-bottom: 1px solid rgba(0, 200, 83, 0.25);
+        }
+
+        .profile-ring {
+            display: inline-block;
+            position: relative;
+            padding: 8px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #00ffaa, #008b3a);
+            box-shadow: 0 0 20px #00ffaa, 0 0 50px #1ebc5e;
+            transition: box-shadow 0.3s ease;
+        }
+        .profile-ring:hover {
+            box-shadow: 0 0 30px #40ff88, 0 0 80px #00e676;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #0b0f18;
+            display: block;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+        }
+        .profile-pic:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin: 24px 0 8px;
+            background: linear-gradient(135deg, #ccffd0, #a0ffb0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 15px #00c85340;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            color: #b0e0c0;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(0, 100, 0, 0.2);
+            padding: 10px 22px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            border: 1px solid #2e7d5e;
+        }
+
+        /* ---------- MAIN LAYOUT ---------- */
+        main {
+            flex: 1;
+            padding: 20px 20px 40px;
+            max-width: 1300px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* section cards with glassmorphism + refined glow */
+        section {
+            background: rgba(18, 22, 35, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 200, 100, 0.25);
+            border-radius: 42px;
+            padding: 3rem 2.5rem;
+            margin: 4rem auto;
+            max-width: 1000px;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 255, 150, 0.1) inset;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            box-shadow: 0 30px 55px -10px #000, 0 0 0 1px #00c85355 inset;
+        }
+
+        /* subtle green aura left/right — more elegant than before */
+        section::before,
+        section::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            bottom: 20%;
+            width: 180px;
+            background: radial-gradient(circle, #00c85330, transparent 90%);
+            filter: blur(60px);
+            opacity: 0.4;
+            z-index: -1;
+            transition: opacity 0.4s;
+        }
+        section:hover::before,
+        section:hover::after {
+            opacity: 0.7;
+        }
+        section::before {
+            left: -70px;
+        }
+        section::after {
+            right: -70px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: #d0ffd0;
+            text-shadow: 0 2px 5px #1e4a2a;
+        }
+        h2 i {
+            color: #00e676;
+            font-size: 2rem;
+            filter: drop-shadow(0 0 5px #0f0);
+        }
+
+        /* about text specific — typing container */
+        .about-typing {
+            font-size: 1.2rem;
+            text-align: center;
+            color: #d0e0d8;
+            max-width: 750px;
+            margin: 0 auto;
+            font-weight: 400;
+            min-height: 180px; /* prevents layout shift */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* blinking cursor effect */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            margin-left: 4px;
+            background-color: #00e676;
+            animation: blink 0.9s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* skills / journey lists */
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        li {
+            background: rgba(0, 200, 100, 0.08);
+            padding: 18px 26px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border: 1px solid #2e7d5e40;
+            box-shadow: 0 6px 14px rgba(0, 30, 0, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: 0.2s;
+            color: #e2f2e6;
+        }
+        li:hover {
+            background: rgba(0, 230, 120, 0.15);
+            border-color: #2e9d6e;
+            transform: translateX(8px) scale(1.01);
+        }
+        li i {
+            color: #3affa3;
+            font-size: 1.8rem;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        /* ---------- SOCIAL GLASS CARD (connect) ---------- */
+        .social {
+            background: rgba(12, 18, 28, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 230, 150, 0.3);
+            border-radius: 80px 80px 40px 40px;
+            padding: 3rem 2rem 2.5rem;
+            margin: 5rem auto 3rem;
+            max-width: 1000px;
+            box-shadow: 0 30px 50px -25px black, 0 0 0 1px #1b4f34 inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, 
+                transparent 20%, 
+                rgba(120, 255, 120, 0.2) 40%,
+                rgba(200, 255, 200, 0.35) 50%,
+                rgba(120, 255, 120, 0.2) 60%,
+                transparent 80%
+            );
+            background-size: 250% 250%;
+            animation: shine-sweep 8s infinite ease;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.7;
+        }
+
+        @keyframes shine-sweep {
+            0% { background-position: 150% 150%; }
+            100% { background-position: -50% -50%; }
+        }
+
+        .social h2 {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2.8rem;
+        }
+
+        .social-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px 28px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .social a {
+            display: block;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 0 2px transparent;
+            border: 2px solid rgba(180, 255, 180, 0.4);
+            overflow: hidden;
+        }
+
+        .social a:hover {
+            transform: translateY(-12px) scale(1.1);
+            border-color: #aaffaa;
+            box-shadow: 0 18px 30px -8px #000, 0 0 30px #1fffa0;
+        }
+
+        .social img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+            background: #1b2b1f;
+        }
+
+        /* footer minimal */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 10, 5, 0.5);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #1c5f3e;
+            color: #9bbfaa;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+            margin-top: 30px;
+        }
+        footer i {
+            color: #40ff80;
+            margin: 0 6px;
+        }
+
+        /* responsive adjustments */
+        @media (max-width: 700px) {
+            header { padding: 50px 15px 30px; }
+            .profile-pic { width: 170px; height: 170px; }
+            h1 { font-size: 2.8rem; }
+            .tagline { font-size: 1.1rem; }
+            section { padding: 2.2rem 1.5rem; border-radius: 32px; }
+            section::before, section::after { opacity: 0.2; width: 100px; }
+            h2 { font-size: 2rem; }
+            .about-typing { min-height: 200px; font-size: 1rem; }
+            li { padding: 14px 18px; font-size: 1rem; gap: 12px; }
+            .social { border-radius: 50px; padding: 2rem 1rem; }
+            .social a { width: 75px; height: 75px; }
+        }
+
+        @media (max-width: 480px) {
+            .social-container { gap: 18px; }
+            .social a { width: 65px; height: 65px; }
+        }
+
+        /* reduce motion if prefers */
+        @media (prefers-reduced-motion: reduce) {
+            * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="profile-ring">
+        <img src="https://i.ibb.co/DP1KYj7d/1766377749814.jpg" alt="Mehedi Hassan Nishad" class="profile-pic" loading="eager">
+    </div>
+    <h1>Mehedi Hassan Nishad</h1>
+    <p class="tagline"><i class="fas fa-heart" style="color:#80ff80;"></i> I give my full effort · The outcome is in Allah's hands <i class="fas fa-heart" style="color:#80ff80;"></i></p>
+</header>
+
+<main>
+    <!-- ABOUT – with typing effect: 10s cycle (typing + 10s off then restart) -->
+    <section>
+        <h2><i class="fas fa-user-astronaut"></i> About Me <i class="fas fa-sparkles" style="font-size:1.8rem;"></i></h2>
+        <div id="typingAbout" class="about-typing">
+            <!-- dynamic lines will be inserted here via js -->
+            <span id="aboutText"></span><span class="cursor"></span>
+        </div>
+    </section>
+
+    <!-- SKILLS - modern cards with icons -->
+    <section>
+        <h2><i class="fas fa-code"></i> Skills <i class="fas fa-rocket"></i></h2>
+        <ul>
+            <li><i class="fas fa-bolt"></i> 💯 Full commitment — until the result arrives</li>
+            <li><i class="fas fa-hourglass-half"></i> ⏳ Moving forward with patience — trusting Allah's timing</li>
+            <li><i class="fas fa-shield-virus"></i> 🛡️ Facing challenges — never giving up</li>
+            <li><i class="fas fa-ruler-combined"></i> 📏 Discipline — following rules, because that is the path to success</li>
+            <li><i class="fas fa-hands-praying"></i> 🤲 Tawakkul — I work hard and leave the results to Allah</li>
+        </ul>
+    </section>
+
+    <!-- JOURNEY -->
+    <section>
+        <h2><i class="fas fa-tree"></i> Journey <i class="fas fa-cloud-moon"></i></h2>
+        <ul>
+            <li><i class="fas fa-seedling"></i> 🌱 From the beginning until now — I have come this far by Allah's mercy</li>
+            <li><i class="fas fa-moon"></i> 🌙 Every difficult moment — I overcame it with Allah's help</li>
+            <li><i class="fas fa-star-and-crescent"></i> 🔮 The future — completely in Allah's hands. I will only keep striving and praying. InshaAllah, whatever He gives will be better than what I expect. ✨</li>
+        </ul>
+    </section>
+
+    <!-- CONNECT - full circle icons with high quality -->
+    <div class="social">
+        <h2><i class="fab fa-connectdevelop"></i> Digital presence <i class="fas fa-globe"></i></h2>
+        <div class="social-container">
+
+            <a href="https://www.facebook.com/nyshvault" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/nq02pCxk/IMG-20251227-WA0013.jpg" alt="Facebook" loading="lazy">
+            </a>
+            <a href="https://www.instagram.com/md_mehedi_hassan_nishad" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/B5TgjF7t/IMG-20251227-WA0017-1.jpg" alt="Instagram" loading="lazy">
+            </a>
+            <a href="https://wa.me/8801325161280" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/Z65Lj5wr/grok-1766854134442.jpg" alt="WhatsApp" loading="lazy">
+            </a>
+            <a href="https://www.threads.net/@md_mehedi_hassan_nishad" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/NgyvKGqd/IMG-20251227-WA0014.jpg" alt="Threads" loading="lazy">
+            </a>
+            <a href="https://www.snapchat.com/add/mehedi-hassan" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/DffcH215/grok-1766853112746.jpg" alt="Snapchat" loading="lazy">
+            </a>
+            <a href="https://www.youtube.com/@%E4%BA%97Nexuz%E4%BA%97" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/Q35sJQPY/IMG-20251227-WA0018.jpg" alt="YouTube" loading="lazy">
+            </a>
+            <a href="https://discord.gg/w4r9sdwb" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/1YFQK0tg/IMG-20251227-WA0016.jpg" alt="Discord" loading="lazy">
+            </a>
+            <a href="https://t.me/Md_Mehedi_Hassan_Nishad" target="_blank" rel="noopener">
+                <img src="https://i.ibb.co/4ZHmYV5c/IMG-20251227-WA0019.jpg" alt="Telegram" loading="lazy">
+            </a>
+        </div>
+        <!-- subtle micro-interaction hint (floating dots) -->
+        <div style="display:flex; justify-content:center; gap:8px; margin-top:30px; opacity:0.4">
+            <i class="fas fa-circle" style="font-size: 8px; color:#8affb8;"></i>
+            <i class="fas fa-circle" style="font-size: 10px; color:#8affb8;"></i>
+            <i class="fas fa-circle" style="font-size: 8px; color:#8affb8;"></i>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <i class="fas fa-copyright"></i> 2025 Mehedi Hassan Nishad · <i class="fas fa-mosque"></i> Everything is for Allah  <i class="fas fa-feather-alt"></i>
+</footer>
+
+<script>
+    (function() {
+        // The full about text with line breaks (as a single string, but we want to show it as multiline)
+        const fullText = `👋 I am Mehedi Hassan Nishad.(MHN)
+🌙 I do not rely on myself — I place my trust in Allah.
+🔥 Whatever I do, I do it with complete dedication. No excuses.
+⚔️ When challenges come, I face them, because I know Allah is with me.
+🕋 The control of my life is in Allah's hands — I simply make the most of the opportunities He provides.`;
+
+        // DOM element
+        const aboutSpan = document.getElementById('aboutText');
+        const cursorSpan = document.querySelector('.cursor');
+
+        // typing control
+        let i = 0;
+        let isDeleting = false;
+        let timeoutHandle = null;
+        let isPaused = false;          // for the 10s off interval
+        let pauseTimeout = null;
+
+        // Speed (ms per character)
+        const typeSpeed = 50;
+        const deleteSpeed = 20;
+        const pauseBetweenCycles = 10000; // 10 seconds off (fully erased & stay blank with cursor)
+
+        function initTyping() {
+            // cancel any pending timeouts
+            if (timeoutHandle) clearTimeout(timeoutHandle);
+            if (pauseTimeout) clearTimeout(pauseTimeout);
+
+            // reset state for fresh start
+            i = 0;
+            isDeleting = false;
+            isPaused = false;
+            aboutSpan.innerText = '';
+            cursorSpan.style.display = 'inline-block'; // ensure cursor visible
+            type();
+        }
+
+        function type() {
+            // if paused (blank waiting), do nothing (pauseTimeout will restart)
+            if (isPaused) return;
+
+            const currentText = aboutSpan.innerText;
+
+            if (!isDeleting && i <= fullText.length) {
+                // typing forward
+                aboutSpan.innerText = fullText.substring(0, i);
+                i++;
+                if (i > fullText.length) {
+                    // finished typing, stay visible for a moment? but we want 10 sec off after finish, 
+                    // meaning we need to pause with full text visible? Wait — user request: "type korte thakbe, abar type kora shesh hole 10 seconds off thakbe then abar type start"
+                    // That means after finishing typing, the text should remain fully visible for 10 seconds, then erase and restart.
+                    // But we want: type -> show full text (10 sec) -> delete (fast) -> immediate type start? or delete after 10 sec and then restart typing?
+                    // Let's implement: type full, wait 10 sec (full visible), then delete, then immediately type again.
+                    if (!isPaused) {
+                        isPaused = true; // prevent further typing
+                        // after 10 seconds, start deleting
+                        pauseTimeout = setTimeout(() => {
+                            isPaused = false;
+                            isDeleting = true;  // now start deleting
+                            type();              // begin delete process
+                        }, pauseBetweenCycles);
+                    }
+                    return;
+                } else {
+                    // continue typing
+                    timeoutHandle = setTimeout(type, typeSpeed);
+                }
+            } 
+            else if (isDeleting && i >= 0) {
+                // deleting characters
+                aboutSpan.innerText = fullText.substring(0, i);
+                i--;
+                if (i < 0) {
+                    // deleted everything: now immediately restart typing (no pause)
+                    isDeleting = false;
+                    i = 0;
+                    timeoutHandle = setTimeout(type, typeSpeed);
+                    return;
+                } else {
+                    timeoutHandle = setTimeout(type, deleteSpeed);
+                }
+            }
+        }
+
+        // start the animation when page loads
+        window.addEventListener('load', initTyping);
+
+        // optional: if you want to restart when user leaves/comes back, but fine.
+    })();
+</script>
+
+<!-- small enhancement: add Font Awesome ligature fallback (already loaded) -->
+</body>
+</html>
